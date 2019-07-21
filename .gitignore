@@ -1,0 +1,8 @@
+composer.lock
+google*
+yandex*
+conf/conf.ini
+fav
+.vscode
+static
+templates

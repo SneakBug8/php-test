@@ -1,0 +1,14 @@
+{
+    "name": "sneak/some-app",
+    "type": "project",
+    "authors": [
+        {
+            "name": "SneakBug8",
+            "email": "sneakbug8@gmail.com"
+        }
+    ],
+    "require": {
+        "klein/klein": "^2.1",
+        "erusev/parsedown": "^1.7"
+    }
+}
