@@ -4,7 +4,7 @@ set_include_path(__DIR__);
 
 $config = new Config();
 $config->LoadIni(__DIR__ . "/../conf/conf.ini");
-# require_once "./functions/mysql.php";
+
 require_once "functions/filler.php";
 require_once "functions/request.php";
 require_once "functions/cms.php";

@@ -1,5 +1,5 @@
 <?php
-function request($method, $url, $body = null)
+function request($method, $url, $requestbody = null)
 {
     $ch = curl_init();
 
@@ -15,13 +15,9 @@ function request($method, $url, $body = null)
         ));
 
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $requestbody);
 
-        echo "<br>";
-        print_r($body);
-        echo "<br>";
-        var_dump($body);
-
+        echo json_encode($requestbody);
     }
 
     $data = curl_exec($ch);
