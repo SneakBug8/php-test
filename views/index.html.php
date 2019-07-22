@@ -15,10 +15,10 @@
 	<?php endif; ?>
 	<?php if ($this->sitename) : ?>
 		<meta property="og:site_name" content="{{sitename}}">
-	<? endif; ?>
+	<?php endif; ?>
 	<?php if ($this->image) : ?>
 		<meta property="og:image" content="{{image}}" />
-	<? endif; ?>
+	<?php endif; ?>
 	<link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/fav/apple-icon-72x72.png">
@@ -50,9 +50,18 @@
 			<h4 id="headhomelink"><a href="/">Pavel Nakonechnyy's Blog</a></h4>
 		<?php endif; ?>
 		<h1 class="p-name"><?php echo $this->title; ?></h1>
-		<?php if (is_string($this->innerview)) {
-			$this->partial($this->innerview);
-		} ?>
+		<?php
+        if (is_string($this->innerview)) {
+            $this->partial($this->innerview);
+        }
+        if (is_array($this->innerviews)) {
+            foreach ($this->innerviews as $innerview) {
+                if (is_string($this->innerview)) {
+                    $this->partial($this->innerview);
+                }
+            }
+        }
+        ?>
 	</div>
 	<div class="published-wrap mb-5">
 		<?php echo $this->footer; ?>

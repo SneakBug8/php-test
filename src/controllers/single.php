@@ -5,7 +5,7 @@ class SingleController
     public static function getController()
     {
         return function ($request, $response, $service) {
-            require_once $_SERVER['DOCUMENT_ROOT'] . "/src/functions/posts.php";
+            require_once basePath() . "/functions/posts.php";
 
             $service->post = PostsService::$Instance->GetWithUrl($request->url);
             $service->title = $service->post->title;

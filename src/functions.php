@@ -41,6 +41,11 @@ function conf($key)
     return Config::$Instance->GetKey($key);
 }
 
+function basePath()
+{
+    return $_SERVER['DOCUMENT_ROOT'] . "/src/";
+}
+
 function error($code, $message)
 {
     @header("HTTP/1.0 {$code} {$message}", true, $code);
