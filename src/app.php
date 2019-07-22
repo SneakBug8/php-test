@@ -16,10 +16,6 @@ class App
         $klein->respond('GET', '/', HomeController::getController());
         $klein->respond('GET', '/[*:url]', SingleController::getController());
 
-        $klein->respond("GET", "*", function($request, $response, $service) {
-            $response->send("404");
-        });
-
         $klein->dispatch();
     }
 }

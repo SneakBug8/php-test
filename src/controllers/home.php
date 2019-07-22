@@ -1,11 +1,12 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/src/functions/posts.php";
 
 class HomeController
 {
     public function getController()
     {
-        return function($request, $response, $service) {
+        return function ($request, $response, $service) {
+            require_once $_SERVER['DOCUMENT_ROOT'] . "/src/functions/posts.php";
+
             $service->posts = PostsService::$Instance->GetPage(1);
             $service->title = "Веб разработка и игры";
             $service->innerview = __DIR__ . "/../../views/posts.html.php";
