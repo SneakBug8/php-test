@@ -56,8 +56,8 @@
         }
         if (is_array($this->innerviews)) {
             foreach ($this->innerviews as $innerview) {
-                if (is_string($this->innerview)) {
-                    $this->partial($this->innerview);
+                if (is_string($innerview)) {
+                    $this->partial($innerview);
                 }
             }
         }

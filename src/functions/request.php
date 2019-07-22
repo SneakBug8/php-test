@@ -19,5 +19,9 @@ function request($method, $url, $requestbody = null)
     $data = curl_exec($ch);
     curl_close($ch);
 
-    return json_decode($data);
+    if (isset($data)) {
+        return json_decode($data);
+    }
+
+    return null;
 }

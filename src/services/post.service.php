@@ -1,8 +1,7 @@
 <?php
-set_include_path(__DIR__);
-require_once "cms.php";
+require_once basePath() . "functions/cms.php";
 
-class PostsService
+class PostService
 {
     public static $Instance;
     private $collectionName = "Posts";
@@ -11,7 +10,7 @@ class PostsService
     function __construct()
     {
         $this->Parsedown = new \Parsedown();
-        PostsService::$Instance = $this;
+        PostService::$Instance = $this;
     }
 
     public function getWithUrl($url)
@@ -34,6 +33,10 @@ class PostsService
         ];
 
         $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+
+        if(!isset($data) || count($data) == 0) {
+            return null;
+        }
 
         $post = $data[0];
         $post->content = $this->Parsedown->text($post->content);
@@ -65,4 +68,4 @@ class PostsService
     }
 }
 
-new PostsService();
+new PostService();

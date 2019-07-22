@@ -1,8 +1,6 @@
 <?php
 
-set_include_path(__DIR__);
-
-new Config(__DIR__ . "/../conf/conf.ini");
+new Config(basePath() . "../conf/conf.ini");
 
 class Config
 {
@@ -44,6 +42,11 @@ function conf($key)
 function basePath()
 {
     return $_SERVER['DOCUMENT_ROOT'] . "/src/";
+}
+
+function viewsPath()
+{
+    return $_SERVER['DOCUMENT_ROOT'] . "/views/";
 }
 
 function error($code, $message)

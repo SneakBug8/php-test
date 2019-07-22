@@ -1,8 +1,7 @@
 <?php
-set_include_path(__DIR__);
-require_once "cms.php";
+require_once basePath() . "functions/cms.php";
 
-class PagesService
+class PageService
 {
     public static $Instance;
     private $collectionName = "Pages";
@@ -11,7 +10,7 @@ class PagesService
     function __construct()
     {
         $this->Parsedown = new \Parsedown();
-        PostsService::$Instance = $this;
+        PageService::$Instance = $this;
     }
 
     public function getWithUrl($url)
@@ -36,4 +35,4 @@ class PagesService
     }
 }
 
-new PagesService();
+new PageService();
