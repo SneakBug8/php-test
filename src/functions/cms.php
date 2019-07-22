@@ -32,6 +32,12 @@ class CmsService
 
         return $res->entries;
     }
+
+    function getSingleton($singletonName) {
+        $res = request("GET", $this->getRequestUrl("/api/singletons/get/" . $singletonName));
+
+        return $res;
+    }
 }
 
 new CmsService();

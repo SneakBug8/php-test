@@ -17,11 +17,10 @@ class SidenoteController
                 return;
             }
 
-            $service->note = $note;
-            $service->title = $service->note->title;
+            $service->title = $note->title;
 
             $service->innerview = viewsPath() . "sidenote.html.php";
-            $service->render(viewsPath() . "index.html.php");
+            $service->render(viewsPath() . "index.html.php", SidenoteService::$Instance->getRenderData($note));
             $response->send();
         };
     }

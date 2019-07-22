@@ -21,7 +21,8 @@ class SidenoteService
             ],
             "fields" => [
                 "title" => 1,
-                "content" => 1
+                "content" => 1,
+                "url" => 1
             ]
         ];
 
@@ -33,22 +34,6 @@ class SidenoteService
 
         $note = $data[0];
         $note->content = $this->Parsedown->text($note->content);
-
-        $noteindex = (int) $note->url;
-
-        $previous = $this->GetTitle($noteindex - 1);
-        if ($previous) {
-            $previous->url = "sidenotes/" . ($nodeindex - 1);
-        }
-        $next = $this->GetTitle($nodeindex + 1);
-        if ($next) {
-            $next->url = "sidenotes/" . ($nodeindex + 1);
-        }
-
-        $note->customhomepage = [
-            "link" => "/sidenotes",
-            "text" => "Заметки на полях"
-        ];
 
         return $note;
     }
@@ -90,6 +75,30 @@ class SidenoteService
 
         $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
         return $data;
+    }
+
+    public function getRenderData($note) {
+        $noteindex = (int) $note->url;
+
+        $previous = $this->GetTitle($noteindex - 1);
+        if ($previous) {
+            $previous->url = "sidenotes/" . ($noteindex - 1);
+        }
+        $next = $this->GetTitle($noteindex + 1);
+        if ($next) {
+            $next->url = "sidenotes/" . ($noteindex + 1);
+        }
+
+        $note->customhomepage = [
+            "link" => "/sidenotes",
+            "text" => "Заметки на полях"
+        ];
+
+        return [
+            "previous" => $previous,
+            "next" => $next,
+            "note" => $note
+        ];
     }
 }
 

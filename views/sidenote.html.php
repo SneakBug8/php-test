@@ -19,7 +19,7 @@
     <div class="col-12" style="text-align: center">
     <?php if ($this->note->customhomepage): ?>
     <a style="display: block; text-align: center;"
-        href="<?php echo $this->note->customhomepage->link ?>"><?php echo $this->note->customhomepage->text ?></a>
+        href="<?php echo $this->note->customhomepage["link"] ?>"><?php echo $this->note->customhomepage["text"] ?></a>
 <?php else: ?>
     <a style="display: block; text-align: center;" href="/">На главную</a>
 <?php endif; ?>
