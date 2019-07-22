@@ -1,8 +1,8 @@
 <?php if (is_array($this->posts)) : ?>
-    <ul>
+    <ul class="frontposts">
         <?php foreach ($this->posts as $post) : ?>
-            <div>
-                <li>
+            <div class="frontwrapper">
+                <li class="frontlink">
                     <a href="/<?php echo $post->url ?>"><?php echo $post->title; ?></a>
                 </li>
             </div>

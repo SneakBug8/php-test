@@ -14,7 +14,7 @@ class PostsService
         PostsService::$Instance = $this;
     }
 
-    function GetWithUrl($url)
+    public function getWithUrl($url)
     {
         $requestbody = [
             "filter" => [
@@ -41,7 +41,7 @@ class PostsService
         return $post;
     }
 
-    function GetPage($page)
+    public function getPage($page)
     {
         $requestbody = [
             "sort" => [

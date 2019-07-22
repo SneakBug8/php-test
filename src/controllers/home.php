@@ -5,11 +5,19 @@ class HomeController
     public function getController()
     {
         return function ($request, $response, $service) {
-            require_once basePath() . "/functions/posts.php";
+            require_once basePath() . "functions/posts.php";
+            require_once basePath() . "functions/page.php";
 
-            $service->posts = PostsService::$Instance->GetPage(1);
+
+            $page = PagesService::$Instance->getWithUrl("/");
+            $service->page = $page;
+
+            $service->posts = PostsService::$Instance->getPage(1);
             $service->title = "Веб разработка и игры";
-            $service->innerview = __DIR__ . "/../../views/posts.html.php";
+            $service->innerviews = [
+                __DIR__ . "/../../views/page.html.php",
+                __DIR__ . "/../../views/home.html.php"
+            ];
 
             $service->render(__DIR__ . "/../../views/index.html.php");
         };
