@@ -1,11 +1,7 @@
-{{#extend "index"}}
-{{#content "content"}}
 <article>
-    {{{post.content}}}
-
+    <?php echo $this->note->content; ?>
     <div class="row mb-3">
         <div class="col-sm-12">
-            {{#if post.date}}<i id="date">Опубликовано {{post.date}}</i>{{/if}}
             <div id="vk_like"></div>
         </div>
     </div>
@@ -17,13 +13,13 @@
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
     <hr>
 
-  <?php $this->partial(__DIR__ . "/partials/postnav.html.php"); ?>
+  <?php $this->partial(viewsPath() . "partials/postnav.html.php"); ?>
 
   <div class="row">
     <div class="col-12" style="text-align: center">
-    <?php if (isset($this->post->customhomepage)): ?>
+    <?php if ($this->note->customhomepage): ?>
     <a style="display: block; text-align: center;"
-        href="<?php echo $this->post->customhomepage->link?>"><?php $this->post->customhomepage->text?></a>
+        href="<?php echo $this->note->customhomepage->link ?>"><?php echo $this->note->customhomepage->text ?></a>
 <?php else: ?>
     <a style="display: block; text-align: center;" href="/">На главную</a>
 <?php endif; ?>

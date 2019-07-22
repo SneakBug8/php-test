@@ -28,6 +28,10 @@ class PageService
 
         $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
 
+        if (!$data) {
+            return null;
+        }
+
         $page = $data[0];
         $page->content = $this->Parsedown->text($page->content);
 

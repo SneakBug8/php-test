@@ -5,6 +5,10 @@ class SingleController
     public static function getController()
     {
         return function ($request, $response, $service) {
+            if ($response->isSent()) {
+                return;
+            }
+
             require_once basePath() . "/services/post.service.php";
 
             $post = PostService::$Instance->getWithUrl($request->url);
@@ -17,6 +21,7 @@ class SingleController
 
             $service->innerview = viewsPath() . "single.html.php";
             $service->render(viewsPath() . "index.html.php");
+            $response->send();
         };
     }
 }
