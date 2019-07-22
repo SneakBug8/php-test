@@ -1,4 +1,7 @@
 <?php
+set_include_path(__DIR__);
+require_once "cms.php";
+
 class PostsService
 {
     public static $Instance;

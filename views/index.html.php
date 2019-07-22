@@ -50,8 +50,9 @@
 			<h4 id="headhomelink"><a href="/">Pavel Nakonechnyy's Blog</a></h4>
 		<?php endif; ?>
 		<h1 class="p-name"><?php echo $this->title; ?></h1>
-		<?php $this->partial($this->innerview); ?>
-
+		<?php if (is_string($this->innerview)) {
+			$this->partial($this->innerview);
+		} ?>
 	</div>
 	<div class="published-wrap mb-5">
 		<?php echo $this->footer; ?>

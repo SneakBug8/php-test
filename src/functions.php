@@ -2,17 +2,18 @@
 
 set_include_path(__DIR__);
 
-$config = new Config();
-$config->LoadIni(__DIR__ . "/../conf/conf.ini");
-
-require_once "functions/filler.php";
-require_once "functions/request.php";
-require_once "functions/cms.php";
-require_once "functions/posts.php";
+new Config(__DIR__ . "/../conf/conf.ini");
 
 class Config
 {
     private $_config = array();
+    public static $Instance;
+    public function __construct($path)
+    {
+        $this->LoadIni($path);
+
+        Config::$Instance = $this;
+    }
 
     public function GetKey($key)
     {
@@ -37,8 +38,7 @@ class Config
 
 function conf($key)
 {
-    global $config;
-    return $config->GetKey($key);
+    return Config::$Instance->GetKey($key);
 }
 
 function error($code, $message)
