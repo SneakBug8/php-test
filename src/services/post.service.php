@@ -67,7 +67,8 @@ class PostService
                 "url" => $url,
             ],
             "fields" => [
-                "title" => 1
+                "title" => 1,
+                "url" => 1
             ]
         ];
 
@@ -81,21 +82,15 @@ class PostService
         return $post;
     }
 
-    public static function getRenderData($post)
+    public static function getRenderData($service, $post)
     {
-        if ($post->previouslink) {
-            $previous = self::GetTitle($post->previouslink);
+        if ($post->prevlink) {
+            $service->previous = self::GetTitle($post->prevlink);
         }
 
         if ($post->nextlink) {
-            $next = self::GetTitle($post->nextlink);
+            $service->next = self::GetTitle($post->nextlink);
         }
-
-        return [
-            "previous" => $previous,
-            "next" => $next,
-            "post" => $post
-        ];
     }
 
     public static function AppendToSitemap($sitemap)

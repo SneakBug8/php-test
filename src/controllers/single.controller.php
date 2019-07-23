@@ -19,8 +19,13 @@ class SingleController
             $service->post = $post;
             $service->title = $service->post->title;
 
+            $service->description = $post->description;
+            $service->image = $post->image;
+
+            PostService::getRenderData($service, $post);
+
             $service->innerview = viewsPath() . "single.html.php";
-            $service->render(viewsPath() . "index.html.php", PostService::getRenderData($post));
+            $service->render(viewsPath() . "index.html.php");
             $response->send();
         };
     }

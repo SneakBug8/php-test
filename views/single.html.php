@@ -22,6 +22,7 @@
   <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
   <hr>
   <?php $this->partial(__DIR__ . "/partials/postnav.html.php"); ?>
+
   <div class="row">
     <div class="col-12" style="text-align: center">
     <?php if ($this->post->customhomepage): ?>

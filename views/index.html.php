@@ -7,17 +7,17 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<meta name="referrer" content="origin">
 	<title><?php echo $this->titlePrefix . " | " . $this->title ?></title>
-	<meta property="og:title" content="{{title}}" />
+	<meta property="og:title" content="<?php echo $this->title; ?>" />
 	<meta property="og:type" content="article" />
 	<?php if ($this->$desctiption) : ?>
-	<meta name="description" content="{{description}}">
-	<meta property="og:description" content="{{description}}">
+	<meta name="description" content="<?php echo $this->description; ?>">
+	<meta property="og:description" content="<?php echo $this->description; ?>">
 	<?php endif; ?>
 	<?php if ($this->sitename) : ?>
-	<meta property="og:site_name" content="{{sitename}}">
+	<meta property="og:site_name" content="<?php echo $this->sitename; ?>">
 	<?php endif; ?>
 	<?php if ($this->image) : ?>
-	<meta property="og:image" content="{{image}}" />
+	<meta property="og:image" content="<?php echo $this->image; ?>" />
 	<?php endif; ?>
 	<link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
