@@ -13,4 +13,4 @@ gulp.task('sass:watch', function ()
     gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
-export.build = gulp.series("sass");
+exports.build = gulp.series("sass");

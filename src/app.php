@@ -13,6 +13,10 @@ require_once basePath() ."controllers/sidenotes/sidenotes.controller.php";
 
 require_once basePath() ."controllers/tags/tag.controller.php";
 
+
+require_once basePath() ."controllers/accessdenied.controller.php";
+require_once basePath() ."controllers/notfound.controller.php";
+
 class App
 {
     function __construct() {
@@ -29,6 +33,9 @@ class App
 
         $klein->respond('GET', '/[*:url]', SingleController::getController());
         $klein->respond('GET', '/[*:url]', PageController::getController());
+
+        $klein->respond("GET", "/403", AccessDeniedController::getController());
+        $klein->respond("GET", "*", NotFoundController::getController());
 
         $klein->dispatch();
     }
