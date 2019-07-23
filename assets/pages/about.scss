@@ -1,0 +1,16 @@
+@keyframes taft {
+    0% {
+        transform: translate(100%, 0)
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+
+#taft {
+    animation-name: taft;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+}

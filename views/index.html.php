@@ -10,14 +10,14 @@
 	<meta property="og:title" content="{{title}}" />
 	<meta property="og:type" content="article" />
 	<?php if ($this->$desctiption) : ?>
-		<meta name="description" content="{{description}}">
-		<meta property="og:description" content="{{description}}">
+	<meta name="description" content="{{description}}">
+	<meta property="og:description" content="{{description}}">
 	<?php endif; ?>
 	<?php if ($this->sitename) : ?>
-		<meta property="og:site_name" content="{{sitename}}">
+	<meta property="og:site_name" content="{{sitename}}">
 	<?php endif; ?>
 	<?php if ($this->image) : ?>
-		<meta property="og:image" content="{{image}}" />
+	<meta property="og:image" content="{{image}}" />
 	<?php endif; ?>
 	<link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
@@ -37,20 +37,28 @@
 	<meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/fav/favicon.ico" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
+		crossorigin="anonymous">
 	<link href="/static/style.css" media="all" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<div id="headline">
-		<a href="javascript:undefined" id="themebutton" title="Тёмная тема">🌙</a>
-	</div>
+	<ul class="headernav">
+		<li><a href="javascript:undefined" id="themebutton" title="Тёмная тема">🌙</a></li>
+		<li><a href="/">🏠</a></li>
+		<li><a href="/about">Обо мне</a></li>
+		<li><a href="/turnkey-websites">Сайты на заказ</a></li>
+		<li><a class="md-only" href="/services">Услуги</a></li>
+		<li><a href="/portfolio">Портфолио</a></li>
+		<li><a class="md-only" href="/sidenotes">Заметки на полях</a></li>
+</ul>
 	<div class="published-wrap wrapper note">
 		<?php if (!$this->hidehomelink) : ?>
-			<h4 id="headhomelink"><a href="/">Pavel Nakonechnyy's Blog</a></h4>
+		<h4 id="headhomelink"><a href="/">Pavel Nakonechnyy's Blog</a></h4>
 		<?php endif; ?>
 		<h1 class="p-name"><?php echo $this->title; ?></h1>
-		<?php
+		<article>
+			<?php
         if (is_string($this->innerview)) {
             $this->partial($this->innerview);
         }
@@ -62,6 +70,7 @@
             }
         }
         ?>
+		</article>
 	</div>
 	<div class="published-wrap mb-5">
 		<?php echo $this->footer; ?>
@@ -80,7 +89,7 @@
 	}
 	gtag('js', new Date());
 	gtag('config', 'UA-140928369-1');
-	setTimeout(function() {
+	setTimeout(function () {
 		ga('send', 'event', 'read', '15_seconds');
 	}, 15000);
 </script>
