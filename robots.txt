@@ -1,0 +1,1 @@
+SITEMAP: http://php.sneakbug8.ru/sitemaps/sitemap-index.xml

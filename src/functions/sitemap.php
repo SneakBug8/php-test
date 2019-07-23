@@ -6,7 +6,7 @@ class SitemapGenerator
     {
         $sitemap = new \SitemapPHP\Sitemap('http://php.sneakbug8.ru');
 
-        $sitemap->setPath(basePath() . "sitemaps/");
+        $sitemap->setPath(basePath() . "../sitemaps/");
 
         require_once basePath() . "services/post.service.php";
         require_once basePath() . "services/page.service.php";
@@ -14,7 +14,7 @@ class SitemapGenerator
 
         PostService::AppendToSitemap($sitemap);
         PageService::AppendToSitemap($sitemap);
-        SitemapService::AppendToSitemap($sitemap);
+        SidenoteService::AppendToSitemap($sitemap);
 
         $sitemap->createSitemapIndex('http://php.sneakbug8.ru/sitemap/', 'Today');
     }
