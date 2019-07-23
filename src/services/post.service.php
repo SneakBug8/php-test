@@ -61,6 +61,23 @@ class PostService
         return $data;
     }
 
+    public static function getRenderData($post)
+    {
+        if ($post->previouslink) {
+            $previous = self::GetTitle($post->previouslink);
+        }
+
+        if ($post->nextlink) {
+            $next = self::GetTitle($post->nextlink);
+        }
+
+        return [
+            "previous" => $previous,
+            "next" => $next,
+            "post" => $post
+        ];
+    }
+
     public static function AppendToSitemap($sitemap)
     {
         $requestbody = [

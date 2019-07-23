@@ -18,10 +18,10 @@
   <div class="row">
     <div class="col-12" style="text-align: center">
     <?php if ($this->note->customhomepage): ?>
-    <a style="display: block; text-align: center;"
+    <a style="display: inline-block; width: 40%;" class="btn-outline"
         href="<?php echo $this->note->customhomepage["link"] ?>"><?php echo $this->note->customhomepage["text"] ?></a>
 <?php else: ?>
-    <a style="display: block; text-align: center;" href="/">На главную</a>
+    <a style="display: inline-block; width: 40%;" class="btn-outline" href="/">На главную</a>
 <?php endif; ?>
     </div>
   </div>

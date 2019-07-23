@@ -12,7 +12,7 @@ class SingleController
             require_once basePath() . "/services/post.service.php";
 
             $post = PostService::getWithUrl($request->url);
-            if(!isset($post)) {
+            if (!isset($post)) {
                 return;
             }
 
@@ -20,7 +20,7 @@ class SingleController
             $service->title = $service->post->title;
 
             $service->innerview = viewsPath() . "single.html.php";
-            $service->render(viewsPath() . "index.html.php");
+            $service->render(viewsPath() . "index.html.php", PostService::getRenderData($post));
             $response->send();
         };
     }

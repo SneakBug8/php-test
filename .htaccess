@@ -4,6 +4,8 @@ RewriteEngine On
 ErrorDocument 404 /404
 ErrorDocument 403 /403
 
+
+
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f

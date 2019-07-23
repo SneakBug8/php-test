@@ -45,7 +45,7 @@
 <body>
 	<ul class="headernav">
 		<li><a href="javascript:undefined" id="themebutton" title="Тёмная тема">🌙</a></li>
-		<li><a href="/">🏠</a></li>
+		<li><a class="md-only" href="/">🏠</a></li>
 		<li><a href="/about">Обо мне</a></li>
 		<li><a href="/turnkey-websites">Сайты на заказ</a></li>
 		<li><a class="md-only" href="/services">Услуги</a></li>
