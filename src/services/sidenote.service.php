@@ -10,7 +10,7 @@ class SidenoteService
     public function __construct()
     {
         $this->Parsedown = new \Parsedown();
-        SidenoteService::$Instance = $this;
+        self::$Instance = $this;
     }
 
     public function getWithUrl($url)

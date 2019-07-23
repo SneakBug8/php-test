@@ -10,7 +10,7 @@ class PageService
     function __construct()
     {
         $this->Parsedown = new \Parsedown();
-        PageService::$Instance = $this;
+        self::$Instance = $this;
     }
 
     public function getWithUrl($url)

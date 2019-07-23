@@ -10,7 +10,7 @@ class PostService
     function __construct()
     {
         $this->Parsedown = new \Parsedown();
-        PostService::$Instance = $this;
+        self::$Instance = $this;
     }
 
     public function getWithUrl($url)

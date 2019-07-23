@@ -11,6 +11,7 @@ require_once basePath() ."controllers/page.controller.php";
 require_once basePath() ."controllers/sidenotes/sidenote.controller.php";
 require_once basePath() ."controllers/sidenotes/sidenotes.controller.php";
 
+require_once basePath() ."controllers/tags/tag.controller.php";
 
 class App
 {
@@ -19,6 +20,9 @@ class App
 
         $klein->respond("GET", "*", Filler::getController());
         $klein->respond('GET', '/', HomeController::getController());
+
+        $klein->respond('GET', '/tag/[*:tag]', TagController::getController());
+
 
         $klein->respond('GET', '/sidenotes/[*:url]', SidenoteController::getController());
         $klein->respond('GET', '/sidenotes', SidenotesController::getController());

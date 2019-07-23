@@ -36,7 +36,8 @@
 <script type="text/javascript">
   VK.init({ apiId: 7003744, onlyWidgets: true });
   VK.Widgets.Like("vk_like", { type: "button", height: 30 });
-  VK.Widgets.Comments("vk_comments", { limit: 10, attach: "*", autoPublish: 1, pageUrl: window.location.href }, "{{post._id}}");
+  VK.Widgets.Comments("vk_comments", { limit: 10, attach: "*", autoPublish: 1, pageUrl: window.location.href },
+  "<?php echo $this->post->_id; ?>");
 </script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
