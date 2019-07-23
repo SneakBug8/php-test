@@ -18,14 +18,18 @@ class HomeController
             $service->page = $page;
 
             $service->title = $page->title;
+
+            $service->hidehomelink = true;
+
+            if ($service->posts && count($service->posts) >= 20) {
+                $service->nextpage = "2";
+            }
+
             $service->innerviews = [
                 viewsPath() . "partials/pagecontent.html.php",
                 viewsPath() . "home.html.php"
             ];
 
-            $service->hidehomelink = true;
-
-            #$service->render(basePath(). "views/index.html.php");
             $service->render(viewsPath() . "index.html.php");
             $response->send();
         };

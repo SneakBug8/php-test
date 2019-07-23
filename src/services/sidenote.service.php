@@ -94,4 +94,31 @@ class SidenoteService
             "note" => $note
         ];
     }
+
+    public static function AppendToSitemap($sitemap)
+    {
+        $requestbody = [
+            "sort" => [
+                "_modified" => -1
+            ],
+            "fields" => [
+                "url" => 1,
+                "_modified" => 1
+            ],
+            "filter" => [
+                "hide" => false
+            ],
+            "limit" => 1000
+        ];
+
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
+
+        if (!$data) {
+            return;
+        }
+
+        foreach ($data as $note) {
+            $sitemap->addItem('/' . $note->url, '0.2', 'montly', $note->_modified);
+        }
+    }
 }

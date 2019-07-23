@@ -21,6 +21,13 @@ class ComposerStaticInitd1eb1dfd6c3fb55243f5321c9e9a2a8e
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'SitemapPHP' => 
+            array (
+                0 => __DIR__ . '/..' . '/evert/sitemap-php/src',
+            ),
+        ),
         'P' => 
         array (
             'Parsedown' => 

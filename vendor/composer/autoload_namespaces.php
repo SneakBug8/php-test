@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SitemapPHP' => array($vendorDir . '/evert/sitemap-php/src'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
 );
