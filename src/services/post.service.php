@@ -61,6 +61,26 @@ class PostService
         return $data;
     }
 
+    public static function GetTitle($url) {
+        $requestbody = [
+            "filter" => [
+                "url" => $url,
+            ],
+            "fields" => [
+                "title" => 1
+            ]
+        ];
+
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
+
+        if (!isset($data) || count($data) == 0) {
+            return null;
+        }
+
+        $post = $data[0];
+        return $post;
+    }
+
     public static function getRenderData($post)
     {
         if ($post->previouslink) {
