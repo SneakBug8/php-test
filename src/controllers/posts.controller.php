@@ -13,7 +13,7 @@ class PostsController
 
             $service->posts = PostService::getPage($request->page);
 
-            $service->title = "Публикации: страница" . $request->page;
+            $service->title = "Публикации: страница " . $request->page;
             $service->innerview = viewsPath() . "posts.html.php";
 
             if ($service->posts && count($service->posts) >= 20) {

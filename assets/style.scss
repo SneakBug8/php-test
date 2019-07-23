@@ -67,7 +67,7 @@ small {
 }
 
 .note {
-  margin-top: 80px;
+  margin-top: 100px;
   position: relative;
   font-size: 18px;
   line-height: 1.6em;
@@ -103,19 +103,21 @@ small {
   }
 
   @media only screen and (max-width: 768px) {
-    .md-only {
-      display: none;
-    }
-
     li a {
       padding: 5px;
     }
   }
+}
 
-  @media only screen and (min-width: 768px) {
-    .sm-only {
-      display: none;
-    }
+@media only screen and (max-width: 768px) {
+  .md-only {
+    display: none!important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sm-only {
+    display: none!important;
   }
 }
 

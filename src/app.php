@@ -21,8 +21,9 @@ class App
     function __construct() {
         $klein = new \Klein\Klein();
 
-        $klein->respond("GET", "/generate-sitemap", function () {
+        $klein->respond("GET", "/generate-sitemap", function ($request, $response) {
             require_once basePath() . "functions/sitemap.php";
+            $response->header("Location", "/");
         });
 
         $klein->respond("GET", "*", Filler::getController());

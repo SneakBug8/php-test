@@ -4,7 +4,8 @@ RewriteEngine On
 ErrorDocument 404 /404
 ErrorDocument 403 /403
 
-
+RewriteCond %{HTTP_HOST} ^www.sneakbug8.com [NC]
+RewriteRule ^(.*)$ https://sneakbug8.com/$1 [L,R=301]
 
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
