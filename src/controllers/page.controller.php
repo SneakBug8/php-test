@@ -11,7 +11,7 @@ class PageController
 
             require_once basePath() . "/services/page.service.php";
 
-            $service->page = PageService::$Instance->getWithUrl($request->url);
+            $service->page = PageService::getWithUrl($request->url);
 
             if(!$service->page) {
                 return;

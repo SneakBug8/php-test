@@ -11,7 +11,7 @@ class SingleController
 
             require_once basePath() . "/services/post.service.php";
 
-            $post = PostService::$Instance->getWithUrl($request->url);
+            $post = PostService::getWithUrl($request->url);
             if(!isset($post)) {
                 return;
             }

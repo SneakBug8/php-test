@@ -3,17 +3,9 @@ require_once basePath() . "functions/cms.php";
 
 class PageService
 {
-    public static $Instance;
-    private $collectionName = "Pages";
-    private $Parsedown;
+    private static $collectionName = "Pages";
 
-    function __construct()
-    {
-        $this->Parsedown = new \Parsedown();
-        self::$Instance = $this;
-    }
-
-    public function getWithUrl($url)
+    public static function getWithUrl($url)
     {
         $requestbody = [
             "filter" => [
@@ -26,17 +18,17 @@ class PageService
             ]
         ];
 
-        $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
 
         if (!$data) {
             return null;
         }
 
         $page = $data[0];
-        $page->content = $this->Parsedown->text($page->content);
+
+        $Parsedown = new \Parsedown();
+        $page->content = $Parsedown->text($page->content);
 
         return $page;
     }
 }
-
-new PageService();

@@ -7,7 +7,7 @@ class SidenotesController
         return function ($request, $response, $service) {
             require_once basePath() . "services/sidenote.service.php";
 
-            $service->notes = SidenoteService::$Instance->getPage(1);
+            $service->notes = SidenoteService::getPage(1);
 
             $service->title = "Заметки на полях";
             $service->innerview = viewsPath() . "sidenotes.html.php";

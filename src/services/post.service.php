@@ -3,17 +3,9 @@ require_once basePath() . "functions/cms.php";
 
 class PostService
 {
-    public static $Instance;
-    private $collectionName = "Posts";
-    private $Parsedown;
+    private static $collectionName = "Posts";
 
-    function __construct()
-    {
-        $this->Parsedown = new \Parsedown();
-        self::$Instance = $this;
-    }
-
-    public function getWithUrl($url)
+    public static function getWithUrl($url)
     {
         $requestbody = [
             "filter" => [
@@ -32,19 +24,21 @@ class PostService
             ]
         ];
 
-        $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
 
         if(!isset($data) || count($data) == 0) {
             return null;
         }
 
         $post = $data[0];
-        $post->content = $this->Parsedown->text($post->content);
+
+        $Parsedown = new \Parsedown();
+        $post->content = $Parsedown->text($post->content);
 
         return $post;
     }
 
-    public function getPage($page)
+    public static function getPage($page)
     {
         $requestbody = [
             "sort" => [
@@ -63,9 +57,7 @@ class PostService
             "skip" => ($page - 1) * 20
         ];
 
-        $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
         return $data;
     }
 }
-
-new PostService();

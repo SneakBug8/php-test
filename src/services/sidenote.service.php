@@ -3,15 +3,7 @@ require_once basePath() . "functions/cms.php";
 
 class SidenoteService
 {
-    public static $Instance;
-    private $collectionName = "sidenotes";
-    private $Parsedown;
-
-    public function __construct()
-    {
-        $this->Parsedown = new \Parsedown();
-        self::$Instance = $this;
-    }
+    private static $collectionName = "sidenotes";
 
     public function getWithUrl($url)
     {
@@ -26,19 +18,21 @@ class SidenoteService
             ]
         ];
 
-        $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
 
         if (!isset($data) || count($data) == 0) {
             return null;
         }
 
         $note = $data[0];
-        $note->content = $this->Parsedown->text($note->content);
+
+        $Parsedown = new \Parsedown();
+        $note->content = $Parsedown->text($note->content);
 
         return $note;
     }
 
-    public function GetTitle($url) {
+    public static function GetTitle($url) {
         $requestbody = [
             "filter" => [
                 "url" => $url,
@@ -48,7 +42,7 @@ class SidenoteService
             ]
         ];
 
-        $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
 
         if (!isset($data) || count($data) == 0) {
             return null;
@@ -58,7 +52,7 @@ class SidenoteService
         return $note;
     }
 
-    public function getPage($page)
+    public static function getPage($page)
     {
         $requestbody = [
             "sort" => [
@@ -73,18 +67,18 @@ class SidenoteService
             "skip" => ($page - 1) * 100
         ];
 
-        $data = CmsService::$Instance->getCollectionWithParams($this->collectionName, $requestbody);
+        $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
         return $data;
     }
 
-    public function getRenderData($note) {
+    public static function getRenderData($note) {
         $noteindex = (int) $note->url;
 
-        $previous = $this->GetTitle($noteindex - 1);
+        $previous = self::GetTitle($noteindex - 1);
         if ($previous) {
             $previous->url = "sidenotes/" . ($noteindex - 1);
         }
-        $next = $this->GetTitle($noteindex + 1);
+        $next = self::GetTitle($noteindex + 1);
         if ($next) {
             $next->url = "sidenotes/" . ($noteindex + 1);
         }
@@ -101,5 +95,3 @@ class SidenoteService
         ];
     }
 }
-
-new SidenoteService();

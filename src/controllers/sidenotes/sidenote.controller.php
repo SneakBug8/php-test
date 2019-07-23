@@ -11,7 +11,7 @@ class SidenoteController
 
             require_once basePath() . "services/sidenote.service.php";
 
-            $note = SidenoteService::$Instance->getWithUrl($request->url);
+            $note = SidenoteService::getWithUrl($request->url);
 
             if (!$note) {
                 return;
@@ -20,7 +20,7 @@ class SidenoteController
             $service->title = $note->title;
 
             $service->innerview = viewsPath() . "sidenote.html.php";
-            $service->render(viewsPath() . "index.html.php", SidenoteService::$Instance->getRenderData($note));
+            $service->render(viewsPath() . "index.html.php", SidenoteService::getRenderData($note));
             $response->send();
         };
     }
