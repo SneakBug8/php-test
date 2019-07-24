@@ -5,7 +5,7 @@
         <?php if (isset($this->post->date)): ?>
       <i id="date">Опубликовано <?php echo $this->post->date; ?></i>
 <?php endif; ?>
-<?php if (isset($this->post->tags)): ?>
+<?php if ($this->post->tags): ?>
 <?php foreach ($this->post->tags as $tag): ?>
       <i><a href="/tag/<?php echo $tag?>">#<?php echo $tag?></a></i>
 <?php endforeach; ?>
@@ -27,7 +27,7 @@
     <div class="col-12" style="text-align: center">
     <?php if ($this->post->customhomepage): ?>
     <a style="display: inline-block; width: 40%;" class="btn-outline"
-        href="<?php echo $this->post->customhomepage["link"] ?>"><?php echo $this->post->customhomepage["text"] ?></a>
+        href="<?php echo $this->post->customhomepage->link ?>"><?php echo $this->post->customhomepage->text ?></a>
 <?php else: ?>
     <a style="display: inline-block; width: 40%;" class="btn-outline" href="/">На главную</a>
 <?php endif; ?>

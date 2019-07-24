@@ -32,7 +32,8 @@ class SidenoteService
         return $note;
     }
 
-    public static function GetTitle($url) {
+    public static function GetTitle($url)
+    {
         $requestbody = [
             "filter" => [
                 "url" => $url,
@@ -71,7 +72,8 @@ class SidenoteService
         return $data;
     }
 
-    public static function getRenderData($note) {
+    public static function getRenderData($note)
+    {
         $noteindex = (int) $note->url;
 
         $previous = self::GetTitle($noteindex - 1);
@@ -83,14 +85,15 @@ class SidenoteService
             $next->url = "sidenotes/" . ($noteindex + 1);
         }
 
-        $note->customhomepage = [
-            "link" => "/sidenotes",
-            "text" => "Заметки на полях"
-        ];
+        $note->customhomepage = new stdClass();
+        $note->customhomepage->link = "/sidenotes";
+        $note->customhomepage->text = "Заметки на полях";
 
         return [
-            "previous" => $previous,
-            "next" => $next,
+            "post" => [
+                "previous" => $previous,
+                "next" => $next
+            ],
             "note" => $note
         ];
     }

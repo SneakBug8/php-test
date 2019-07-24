@@ -17,11 +17,12 @@ class PostService
                 "content" => 1,
                 "description" => 1,
                 "image" => 1,
-                "nextlink" => 1,
-                "prevlink" => 1,
+                "next" => 1,
+                "previous" => 1,
                 "customhomepage" => 1,
                 "tags" => 1
-            ]
+            ],
+            "populate" => 1
         ];
 
         $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
@@ -80,17 +81,6 @@ class PostService
 
         $post = $data[0];
         return $post;
-    }
-
-    public static function getRenderData($service, $post)
-    {
-        if ($post->prevlink) {
-            $service->previous = self::GetTitle($post->prevlink);
-        }
-
-        if ($post->nextlink) {
-            $service->next = self::GetTitle($post->nextlink);
-        }
     }
 
     public static function AppendToSitemap($sitemap)
