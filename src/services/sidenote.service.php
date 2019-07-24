@@ -85,12 +85,13 @@ class SidenoteService
             $next->url = "sidenotes/" . ($noteindex + 1);
         }
 
-        $note->customhomepage = new stdClass();
-        $note->customhomepage->link = "/sidenotes";
-        $note->customhomepage->text = "Заметки на полях";
+        $note->customhomepage = (object) [
+                "link" => "/sidenotes",
+            "text" => "Заметки на полях"
+            ];
 
         return [
-            "post" => [
+            "post" => (object) [
                 "previous" => $previous,
                 "next" => $next
             ],

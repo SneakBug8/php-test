@@ -15,16 +15,10 @@
 
   <?php $this->partial(viewsPath() . "partials/postnav.html.php"); ?>
 
-  <div class="row">
-    <div class="col-12" style="text-align: center">
-    <?php if ($this->note->customhomepage): ?>
-    <a style="display: inline-block; width: 40%;" class="btn-outline"
-        href="<?php echo $this->note->customhomepage->link ?>"><?php echo $this->note->customhomepage->text ?></a>
-<?php else: ?>
-    <a style="display: inline-block; width: 40%;" class="btn-outline" href="/">На главную</a>
-<?php endif; ?>
-    </div>
-  </div>
+  <?php
+  $this->customhomepage = $this->note->customhomepage;
+  $this->partial(viewsPath() . "/partials/homepagelink.html.php");
+  ?>
 </article>
 <script type="text/javascript">
     VK.init({ apiId: 7003744, onlyWidgets: true });
