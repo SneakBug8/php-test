@@ -30,8 +30,9 @@
   ?>
 
   <?php
-  $this->customhomepage = $this->post->customhomepage;
-  $this->partial(viewsPath() . "/partials/homepagelink.html.php");
+  $this->partial(viewsPath() . "/partials/homepagelink.html.php", [
+    "customhomepage" => $this->post->customhomepage
+  ]);
   ?>
 </article>
 <script type="text/javascript">

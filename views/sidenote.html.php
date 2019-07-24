@@ -16,8 +16,9 @@
     <?php $this->partial(viewsPath() . "partials/postnav.html.php"); ?>
 
     <?php
-  $this->customhomepage = $this->note->customhomepage;
-  $this->partial(viewsPath() . "/partials/homepagelink.html.php");
+  $this->partial(viewsPath() . "/partials/homepagelink.html.php", [
+      "customhomepage" => $this->note->customhomepage
+  ]);
   ?>
 </article>
 <script type="text/javascript">

@@ -3,8 +3,9 @@
     <hr>
 
     <?php
-$this->customhomepage = $this->page->customhomepage;
-$this->partial(viewsPath() . "/partials/homepagelink.html.php");
+$this->partial(viewsPath() . "/partials/homepagelink.html.php", [
+    "customhomepage" => $this->page->customhomepage
+]);
 ?>
 
 </article>
