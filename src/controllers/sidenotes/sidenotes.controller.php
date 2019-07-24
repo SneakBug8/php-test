@@ -13,7 +13,7 @@ class SidenotesController
             $service->innerview = viewsPath() . "sidenotes.html.php";
 
             $service->render(viewsPath() . "index.html.php");
-
+            $response->send();
         };
     }
 }
