@@ -51,7 +51,7 @@
 		<li><a class="md-only" href="/services">Услуги</a></li>
 		<li><a href="/portfolio">Портфолио</a></li>
 		<li><a class="md-only" href="/sidenotes">Заметки на полях</a></li>
-</ul>
+	</ul>
 	<div class="published-wrap wrapper note">
 		<?php if (!$this->hidehomelink) : ?>
 		<h4 id="headhomelink"><a href="/">Pavel Nakonechnyy's Blog</a></h4>

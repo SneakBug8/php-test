@@ -1,8 +1,8 @@
 <article>
     <?php echo $this->page->content; ?>
-<hr>
+    <hr>
 
-<?php
+    <?php
 $this->customhomepage = $this->page->customhomepage;
 $this->partial(viewsPath() . "/partials/homepagelink.html.php");
 ?>
