@@ -21,7 +21,13 @@
   </div>
   <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
   <hr>
-  <?php $this->partial(viewsPath() . "/partials/postnav.html.php"); ?>
+  <?php
+  $this->nav = (object) [
+    "previous" => $this->post->previous,
+    "next" => $this->post->next
+  ];
+  $this->partial(viewsPath() . "/partials/postnav.html.php");
+  ?>
 
   <?php
   $this->customhomepage = $this->post->customhomepage;

@@ -87,11 +87,11 @@ class SidenoteService
 
         $note->customhomepage = (object) [
                 "link" => "/sidenotes",
-            "text" => "Заметки на полях"
-            ];
+                "text" => "Заметки на полях"
+        ];
 
         return [
-            "post" => (object) [
+            "nav" => (object) [
                 "previous" => $previous,
                 "next" => $next
             ],
