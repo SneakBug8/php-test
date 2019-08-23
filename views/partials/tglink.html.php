@@ -1,0 +1,1 @@
+<a href="https://t.me/sb8blog" target="_blank"><img src="https://i.postimg.cc/cJZGbX2v/telegram2.jpg" alt="Мы в Telegram" style="max-width: 300px;"></a>

@@ -8,6 +8,7 @@ class Filler
     {
         return function($request, $response, $service) {
             $service->titlePrefix = conf("titlePrefix");
+            $service->titlePostfix = conf("titlePostfix");
             $service->sitename = conf("sitename");
 
             $service->footer = CmsService::$Instance->getSingleton("footer")->content;

@@ -1,4 +1,5 @@
 <?php if (is_array($this->posts)) : ?>
+<h2>Последние посты</h2>
 <ul class="frontposts">
     <?php foreach ($this->posts as $post) : ?>
     <div class="frontwrapper">
@@ -15,7 +16,7 @@
 <hr>
 <div class="row">
     <div class="col-12">
-        <a class="btn" href="/p/<?php echo $this->nextpage;?>" style="float:right; text-align:right;">Следующая страница
+        <a class="btn nextpage" href="/p/<?php echo $this->nextpage;?>">Следующая страница
             &rarr;</a>
     </div>
 </div>

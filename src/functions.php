@@ -1,16 +1,20 @@
 <?php
 
-new Config(basePath() . "../conf/conf.ini");
-
 class Config
 {
     private $_config = array();
-    public static $Instance;
+    protected static $Instance;
     public function __construct($path)
     {
         $this->LoadIni($path);
+    }
 
-        Config::$Instance = $this;
+    public static function getInstance() {
+        if (!Config::$Instance) {
+            Config::$Instance = new Config(basePath() . "../conf/conf.ini");
+        }
+
+        return Config::$Instance;
     }
 
     public function GetKey($key)
@@ -36,7 +40,7 @@ class Config
 
 function conf($key)
 {
-    return Config::$Instance->GetKey($key);
+    return Config::getInstance()->GetKey($key);
 }
 
 function basePath()

@@ -5,7 +5,6 @@ conf/conf.ini
 fav
 .vscode
 static
-templates
 
 node_modules
 package-lock.json

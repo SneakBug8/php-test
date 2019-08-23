@@ -37,7 +37,8 @@ h6,
 .frontlink,
 .btn,
 .btn-outline,
-.lead, .headernav {
+.lead,
+.headernav {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -74,17 +75,23 @@ small {
   min-height: 440px;
 }
 
+@media print {
+  .headernav {
+    display: none;
+  }
+}
+
 .headernav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: $primary-color;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $primary-color;
 
   li {
     float: left;
@@ -104,20 +111,26 @@ small {
 
   @media only screen and (max-width: 768px) {
     li a {
-      padding: 5px;
+      padding: 10px 5px;
     }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .md-only {
-    display: none!important;
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .sm-only {
-    display: none!important;
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .lg-only {
+    display: none !important;
   }
 }
 
@@ -309,11 +322,11 @@ table {
   clear: both;
   width: 100%;
 
-  .footerlink {
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 
+  .footerlink {
     float: left;
     margin: 5px;
   }
@@ -620,3 +633,20 @@ html.dark {
   }
 }
 */
+
+.fa {
+  padding: 0.25em;
+  font-size: 1.2em!important;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+.nextpage {
+  float:right;
+  text-align:right;
+}

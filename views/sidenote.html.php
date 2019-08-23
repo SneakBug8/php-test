@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <div id="vk_comments"></div>
+            <?php $this->partial(viewsPath() . "/partials/comments.html.php"); ?>
         </div>
     </div>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
