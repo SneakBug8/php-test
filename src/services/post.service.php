@@ -39,7 +39,7 @@ class PostService
         return $post;
     }
 
-    public static function getPage($page)
+    public static function getPage($page, $homepage = false)
     {
         $requestbody = [
             "sort" => [
@@ -52,11 +52,15 @@ class PostService
                 "url" => 1
             ],
             "filter" => [
-                "hide" => false
+                "hide" => false,
             ],
             "limit" => 20,
             "skip" => ($page - 1) * 20
         ];
+
+        if ($homepage) {
+            $requestbody["filter"]["showonhomepage"] = true;
+        }
 
         $data = CmsService::$Instance->getCollectionWithParams(self::$collectionName, $requestbody);
         return $data;

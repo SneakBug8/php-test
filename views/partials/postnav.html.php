@@ -1,3 +1,4 @@
+<?php /*
 <div class="row mb-1">
   <div class="col-sm-12 col-md-6">
     <?php if ($this->nav->previous): ?>
@@ -14,3 +15,4 @@
     <?php endif; ?>
   </div>
 </div>
+*/ ?>

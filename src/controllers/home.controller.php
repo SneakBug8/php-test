@@ -12,7 +12,7 @@ class HomeController
             require_once basePath() . "services/post.service.php";
             require_once basePath() . "services/page.service.php";
 
-            $service->posts = PostService::getPage(1);
+            $service->posts = PostService::getPage(1, true);
 
             $page = PageService::getWithUrl("/");
             $service->page = $page;
