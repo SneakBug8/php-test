@@ -1,6 +1,6 @@
 <?php if (is_array($this->posts)) : ?>
 <h2>Последние посты</h2>
-<ul class="frontposts">
+<ul class="frontposts twocols">
     <?php foreach ($this->posts as $post) : ?>
     <div class="frontwrapper">
         <li class="frontlink">

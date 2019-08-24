@@ -11,7 +11,7 @@ class PostsController
 
             require_once basePath() . "services/post.service.php";
 
-            $service->posts = PostService::getPage($request->page);
+            $service->posts = PostService::getPage($request->page, true);
 
             $service->title = "Публикации: страница " . $request->page;
             $service->innerview = viewsPath() . "posts.html.php";

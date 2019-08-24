@@ -39,7 +39,7 @@
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/fav/favicon.ico" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
 		crossorigin="anonymous">
-	<link href="/static/style.css?ver=2" media="all" rel="stylesheet" type="text/css">
+	<link href="/static/style.css?ver=4" media="all" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 		<li><a href="/turnkey-websites">Сайты на заказ</a></li>
 		<li><a class="md-only" href="/services">Услуги</a></li>
 		<li><a href="/portfolio">Портфолио</a></li>
-		<li><a class="md-only" href="/sidenotes">Заметки на полях</a></li>
+		<li><a class="md-only" href="/tag/sidenotes">Заметки на полях</a></li>
 		<li><a class="lg-only" href="https://vk.com/sb8blog">ВКонтакте</a></li>
 		<li><a class="lg-only" href="https://t.me/sb8blog">Telegram</a></li>
 	</ul>
