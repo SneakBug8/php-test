@@ -13,7 +13,6 @@
 <p>Нет постов</p>
 <?php endif; ?>
 <?php if ($this->nextpage): ?>
-<hr>
 <div class="row">
     <div class="col-12">
         <a class="btn nextpage" href="/p/<?php echo $this->nextpage;?>">Следующая страница

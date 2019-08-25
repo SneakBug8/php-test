@@ -23,7 +23,6 @@
     </div>
   </div>
   <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
-  <hr>
   <?php
   $this->nav = (object) [
     "previous" => $this->post->previous,
