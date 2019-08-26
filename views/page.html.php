@@ -1,5 +1,5 @@
 <article>
-    <?php echo $this->page->content; ?>
+    <?php $this->partial(viewsPath() . "partials/pagecontent.html.php"); ?>
     <hr>
 
     <?php

@@ -19,6 +19,7 @@ class HomeController
 
             $service->title = $page->title;
 
+            $service->hidetitle = true;
             $service->hidehomelink = true;
 
             if ($service->posts && count($service->posts) >= 20) {

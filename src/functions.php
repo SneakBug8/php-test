@@ -4,14 +4,10 @@ class Config
 {
     private $_config = array();
     protected static $Instance;
-    public function __construct($path)
-    {
-        $this->LoadIni($path);
-    }
 
     public static function getInstance() {
         if (!Config::$Instance) {
-            Config::$Instance = new Config(basePath() . "../conf/conf.ini");
+            Config::$Instance = new Config();
         }
 
         return Config::$Instance;
@@ -31,12 +27,18 @@ class Config
         $path = realpath($path);
 
         if ($path) {
-            $this->_config = parse_ini_file($path);
+            $tempconfig = parse_ini_file($path);
+
+            foreach ($tempconfig as $key => $value) {
+                $this->_config[$key] = $value;
+            }
         } else {
             error(500, "Wrong path for config");
         }
     }
 }
+
+Config::getInstance()->LoadIni(basePath() . "../conf/conf.ini");
 
 function conf($key)
 {

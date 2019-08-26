@@ -4,7 +4,7 @@ class SitemapGenerator
 {
     public function bootstrap()
     {
-        $sitemap = new \SitemapPHP\Sitemap('http://php.sneakbug8.ru');
+        $sitemap = new \SitemapPHP\Sitemap('https://sneakbug8.com');
 
         $sitemap->setPath(basePath() . "../sitemaps/");
 
@@ -16,7 +16,7 @@ class SitemapGenerator
         PageService::AppendToSitemap($sitemap);
         SidenoteService::AppendToSitemap($sitemap);
 
-        $sitemap->createSitemapIndex('http://php.sneakbug8.ru/sitemap/', 'Today');
+        $sitemap->createSitemapIndex('https://sneakbug8.com/sitemap/', 'Today');
     }
 }
 

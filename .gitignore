@@ -1,7 +1,7 @@
 composer.lock
 google*
 yandex*
-conf/conf.ini
+conf/*.ini
 fav
 .vscode
 static
