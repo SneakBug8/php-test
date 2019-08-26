@@ -59,11 +59,6 @@ small {
   }
 }
 
-.published-wrap img {
-  max-width: 100%;
-  height: auto;
-}
-
 .wrapper {
   position: relative;
 }
@@ -156,7 +151,7 @@ h6,
 
 h1,
 #title {
-  font-size: 2.2em;
+  font-size: 3em;
 }
 
 h1:first-of-type,
@@ -165,22 +160,24 @@ h1:first-of-type,
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2.4em;
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 2em;
 }
 
 h4 {
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 
 h5,
 h6 {
-  font-size: 1em;
+  font-size: 1.4em;
   text-transform: uppercase;
 }
+
+
 
 p.lead {
   font-size: 1.2em;
@@ -193,7 +190,8 @@ ol,
 blockquote,
 pre,
 table,
-img {
+img,
+.post-meta {
   margin-bottom: 1.7em;
 }
 
@@ -240,8 +238,8 @@ hr:hover:before {
 
 blockquote {
   font-style: italic;
-  border-left: 4px solid currentColor;
-  margin-left: 0;
+  // border-left: 4px solid currentColor;
+  margin-left: 1em;
   padding-left: 1.7em;
 }
 
@@ -642,37 +640,17 @@ html.dark {
 }
 */
 
-.fa {
-  padding: 0.25em;
-  font-size: 1.2em!important;
-  text-align: center;
-  text-decoration: none;
-}
+@import 'fa';
+
 
 .nextpage {
-  float:right;
-  text-align:right;
+  float: right;
+  text-align: right;
 }
 
-.ad {
-  background-color: #a0b6f8;
-  border-top: 3px solid $link-color;
-  border-bottom: 3px solid $link-color;
-  max-width: 478px;
-  padding: 1em;
-}
+@import 'big-typography';
 
-a.btn.tg-button {
-  background-color: #0088cc; /* Green */
-  border: none;
-  border-radius: 15px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
 
-a.btn.tg-button:hover {
-  background-color: #005F8F;
-}
+@import 'ad';
+@import 'tg-button';
+@import "wine";

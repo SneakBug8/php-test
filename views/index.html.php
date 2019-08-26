@@ -45,13 +45,16 @@
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/fav/favicon.ico" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
 		crossorigin="anonymous">
-	<link href="/static/style.css?ver=5" media="all" rel="stylesheet" type="text/css">
+	<link href="/static/style.css?ver=6" media="all" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+	<div class="wine"></div>
 	<div class="published-wrap wrapper note">
 		<?php if (!$this->hidehomelink) : ?>
 		<h4 id="headhomelink"><a href="/"><?php echo $this->sitename; ?></a></h4>
+		<?php else: ?>
+		<h4 id="headhomelink">Проект Наконечного Павла</h4>
 		<?php endif; ?>
 		<h1 class="p-name"><?php echo $this->title; ?></h1>
 		<article>
