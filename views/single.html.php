@@ -1,4 +1,3 @@
-<article>
   <?php echo $this->post->content ?>
   <div class="post-meta">
       <?php if (isset($this->post->date)): ?>
@@ -30,7 +29,6 @@
   ];
   $this->partial(viewsPath() . "/partials/postnav.html.php");
   ?>
-</article>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script async>

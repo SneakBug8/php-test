@@ -1,4 +1,3 @@
-<article>
     <?php $this->partial(viewsPath() . "partials/pagecontent.html.php"); ?>
     <hr>
 
@@ -7,5 +6,3 @@ $this->partial(viewsPath() . "/partials/homepagelink.html.php", [
     "customhomepage" => $this->page->customhomepage
 ]);
 ?>
-
-</article>

@@ -27,11 +27,10 @@ class HomeController
             }
 
             $service->innerviews = [
-                viewsPath() . "partials/pagecontent.html.php",
-                viewsPath() . "home.html.php"
+                viewsPath() . "partials/pagecontent.html.php"
             ];
 
-            $service->render(viewsPath() . "index.html.php");
+            $service->render(viewsPath() . "home.html.php");
             $response->send();
         };
     }
