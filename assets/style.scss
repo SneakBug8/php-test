@@ -47,18 +47,10 @@ small {
   font-size: small;
 }
 
-.published-wrap {
-  margin: 1em auto;
+.published-wrap, .head {
+  margin: 1em;
   background-color: white;
   max-width: 832px;
-}
-
-@media only screen and (max-width: 852px) {
-
-  .published-wrap,
-  .head {
-    padding: 0 20px;
-  }
 }
 
 .wrapper {

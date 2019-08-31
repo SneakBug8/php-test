@@ -38,8 +38,7 @@
     #title,
     pre,
     .full-width {
-        margin-left: calc(-100vw / 2 + 852px / 2 + 10px);
-        margin-right: calc(-100vw / 2 + 852px / 2 + 10px);
+        margin-right: calc(-100vw + 852px + 10px);
     }
 
 
@@ -53,7 +52,6 @@
         #title,
         pre,
         .full-width {
-            margin-left: 0;
             margin-right: 0;
         }
     }

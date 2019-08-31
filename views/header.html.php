@@ -45,7 +45,7 @@
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/fav/favicon.ico" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
 		crossorigin="anonymous">
-	<link href="/static/style.css?ver=6" media="all" rel="stylesheet" type="text/css">
+	<link href="/static/style.css?ver=7" media="all" rel="stylesheet" type="text/css">
 </head>
 
 <body>
